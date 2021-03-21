@@ -6,6 +6,7 @@ function App() {
         <div className="App">
             <div className="counter">
                 <h1> Init  🎉 </h1>
+                <p> Once again testing</p>
             </div>
         </div>
     );
