@@ -7,6 +7,7 @@ function App() {
             <div className="counter">
                 <h1> Init  🎉 </h1>
                 <p> Once again testing</p>
+                <p> I AM CONTRIBUTING!!!!!!!</p>
             </div>
         </div>
     );
