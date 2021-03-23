@@ -8,6 +8,7 @@ function App() {
                 <h1> Init  🎉 </h1>
                 <p> Once again testing</p>
                 <p> I am once again making changes :) !</p>
+                <p> This is Max Clarke :)</p>
             </div>
         </div>
     );
