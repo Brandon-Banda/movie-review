@@ -10,6 +10,7 @@ function App() {
                 <p> I am once again making changes :) !</p>
                 <p> This is Max Clarke :)</p>
                 <p> amelia :) !</p>
+                <p> my name is Javier :(</p>
 
             </div>
         </div>
