@@ -1,5 +1,6 @@
 import './styles.css';
 import React, { useState } from "react";
+import Rate from "./Rate";
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
                 <p> This is Max Clarke :)</p>
                 <p> amelia :) !</p>
                 <p> my name is Javier :(</p>
+                <Rate />
 
             </div>
         </div>
