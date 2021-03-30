@@ -12,16 +12,19 @@ function App() {
     ];
     return (
         <div className="App">
-            <div className="counter">
-                <h1> Init  🎉 </h1>
-                <p> Once again testing</p>
-                <p> I am once again making changes :) !</p>
-                <p> This is Max Clarke :)</p>
-                <p> amelia :) !</p>
-                <p> my name is Javier :(</p>
-                <Rate />
-
-            </div>
+            {Images.map(({ img, title, idx }) => (
+                <div className="container">
+                    <div className="imgContainer">
+                        <img
+                            key={idx}
+                            src={img}
+                            alt="uh"
+                        />
+                    </div>
+                    <h3> {idx}. {title} </h3>
+                    <Rate />
+                </div>
+            ))}
         </div>
     );
 }
