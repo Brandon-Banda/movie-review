@@ -36,7 +36,6 @@ function Navy() {
 
   var dist = time * (values.speed / 1);
 
-  var result = `At ${values.speed} nautical miles per hour(knots), while currently at the coordinates ${values.lat1}, ${values.lon1}, your ETA to ${values.lat2}, ${values.lon2}, is ${time} HOURS, with a distance of ${dist}`;
 
   return (
     <div
@@ -115,15 +114,34 @@ function Navy() {
             display: "flex",
           }}
         >
-          <p
+                   <p
             style={{
-              fontSize: "36px",
+              display: "flex",
+              margin: "auto",
+              alignItems: "center",
+              width: "calc(50%-2rem)",
+              fontSize: "30px",
               height: "90px",
               lineHeight: "90px",
               textAlign: "center",
+              //color: "black",
+              backgroundColor: 'rgba(0, 0, 0, 0.6)',
+              overflow: 'hidden',
+              height: '100%',
+              //opacity: 0.6,
+              textDecoration: 'none',
             }}
           >
-            {result}
+            {`Starting coordinates: ${values.lat1}, ${values.   lon1}`} 
+            <br />
+            {`Ending coordinates: ${values.lat2}, ${values.lon2}`}
+            <br /> 
+            {`Speed traveling: ${values.speed} KNOTS`} 
+            <br />
+            {`Estimated time: ${parseInt(time)} HOURS`}
+            <br />
+            {`Miles traveled: ${parseInt(dist)} NAUTICAL MILES`}
+ 
           </p>
           <div style={{ alignItems: "right", justifyContent: "space-between" }}>
             <button
