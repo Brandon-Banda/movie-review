@@ -132,13 +132,14 @@ function Navy() {
               textDecoration: 'none',
             }}
           >
-            {`Starting coordinates: ${values.lat1}, ${values.   lon1}`} 
+            {`Starting coordinates: ${parseFloat(values.lat1).toFixed( 3 )}, ${parseFloat(values.lon1).toFixed( 3 )}`} 
             <br />
-            {`Ending coordinates: ${values.lat2}, ${values.lon2}`}
+            {`Ending coordinates: ${parseFloat(values.lat2).toFixed( 3 )}, ${parseFloat(values.lon2).toFixed( 3 )}`}
             <br /> 
             {`Speed traveling: ${values.speed} KNOTS`} 
             <br />
             {`Estimated time: ${parseInt(time)} HOURS`}
+            {/*TODO:display in months/days/hours instead of just hours*/}
             <br />
             {`Miles traveled: ${parseInt(dist)} NAUTICAL MILES`}
  
@@ -148,6 +149,7 @@ function Navy() {
               className='dark-button'
               onClick={() => {
                 setView("form");
+                // TODO: actually clear the form
               }}
             >
               Clear
