@@ -76,7 +76,7 @@ const Movies = () => {
   function snap() {
     Share();
     // Screenshot
-    var node = document.getElementById("root");
+    var node = document.getElementById("main");
     htmlToImage
       .toPng(node)
       .then(function (dataUrl) {
@@ -125,7 +125,7 @@ const Movies = () => {
 
   return (
     <div>
-      <div className='main'>
+      <div className='main' id="main">
         {Images.map(({ img, title, idx, lnk }) => (
           <div className='container'>
             <div className='imgContainer'>
