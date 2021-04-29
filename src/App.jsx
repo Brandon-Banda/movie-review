@@ -9,18 +9,20 @@ import Navy from "./pages/Navy";
 function App() {
   var shareUrl = sessionStorage.getItem("export-url");
   return (
+    <div className='App'>
     <Router>
-      <div className='App'>
-        <Nav />
         <Switch>
+        <Route path='/navy' component={Navy} />
+        <div>
+        <Nav />
           <Route path='/activity' component={Activity} />
           <Route path='/' exact component={Home} />
           <Route path='/test' component={Export} />
           <Route exact path={`/share/${shareUrl}`} component={Export} />
-          <Route path='/navy' component={Navy} />
+          </div>
         </Switch>
-      </div>
     </Router>
+    </div>
   );
 }
 

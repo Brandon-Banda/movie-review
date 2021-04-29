@@ -36,6 +36,22 @@ function Navy() {
 
   var dist = time * (values.speed / 1);
 
+  // TODO: write functionality to check input so we dont enter in dumb stuff
+  function checkInput(stopLight) {
+    if (
+      (values.lat1 || values.lat2) > 90 ||
+      (values.lat1 || values.lat2) < -90
+    ) {
+      console.log("bad");
+      stopLight = "red";
+    } else {
+      console.log("good");
+      stopLight = "green";
+    }
+
+    return stopLight;
+  }
+
 
   return (
     <div
@@ -57,7 +73,7 @@ function Navy() {
             min='-90'
             max='90'
             onChange={set("lat1")}
-            placeholder='Enter Latitude'
+            placeholder='Starting Latitude'
             className='dark-input'
           ></input>
           <input
@@ -66,7 +82,7 @@ function Navy() {
             required
             min='1'
             onChange={set("lon1")}
-            placeholder='Enter Longitude'
+            placeholder='Starting Longitude'
             className='dark-input'
           ></input>
           <input
@@ -75,7 +91,7 @@ function Navy() {
             required
             min='1'
             onChange={set("lat2")}
-            placeholder='Enter Latitude'
+            placeholder='Ending Latitude'
             className='dark-input'
           ></input>
           <input
@@ -84,7 +100,7 @@ function Navy() {
             required
             min='1'
             onChange={set("lon2")}
-            placeholder='Enter Longitude'
+            placeholder='Ending Longitude'
             className='dark-input'
           ></input>
           <input
@@ -99,6 +115,10 @@ function Navy() {
           <button
             className='dark-button'
             onClick={() => {
+              // checkInput();
+              // checkInput.stopLight === "green"
+              //   ? setView("result")
+              //   : console.log(checkInput.stopLight);
               setView("result");
             }}
           >
@@ -121,7 +141,6 @@ function Navy() {
               alignItems: "center",
               width: "calc(50%-2rem)",
               fontSize: "30px",
-              height: "90px",
               lineHeight: "90px",
               textAlign: "center",
               //color: "black",
@@ -149,7 +168,7 @@ function Navy() {
               className='dark-button'
               onClick={() => {
                 setView("form");
-                // TODO: actually clear the form
+                setValues("");
               }}
             >
               Clear

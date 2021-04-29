@@ -11,9 +11,12 @@ function Nav() {
         <h1> movie-review</h1>
       </Link>
       <ul className='nav-links'>
-        {/* <Link style={navStyle} to='/activity'>
-          <li style={{ fontSize: "30px" }}>Activity</li>
-        </Link> */}
+        <Link style={navStyle} to='/activity'>
+          <li style={{ fontSize: "20px" }}>Activity</li>
+        </Link>
+        <Link style={navStyle} to='/navy'>
+          <li style={{ fontSize: "20px" }}>Naval-Project</li>
+        </Link>
       </ul>
     </nav>
   );
