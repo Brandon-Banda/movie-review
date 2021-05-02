@@ -52,7 +52,6 @@ function Navy() {
     return stopLight;
   }
 
-
   return (
     <div
       style={{
@@ -64,6 +63,9 @@ function Navy() {
         height: "100vh",
       }}
     >
+      <nav>
+        <h1 style={{ color: "white" }}>Naval ETA Calculator</h1>
+      </nav>
       {view === "form" ? (
         <div className='input-container'>
           <input
@@ -134,7 +136,7 @@ function Navy() {
             display: "flex",
           }}
         >
-                   <p
+          <p
             style={{
               display: "flex",
               margin: "auto",
@@ -144,24 +146,27 @@ function Navy() {
               lineHeight: "90px",
               textAlign: "center",
               //color: "black",
-              backgroundColor: 'rgba(0, 0, 0, 0.6)',
-              overflow: 'hidden',
-              height: '100%',
+              backgroundColor: "rgba(0, 0, 0, 0.6)",
+              overflow: "hidden",
+              height: "100%",
               //opacity: 0.6,
-              textDecoration: 'none',
+              textDecoration: "none",
             }}
           >
-            {`Starting coordinates: ${parseFloat(values.lat1).toFixed( 3 )}, ${parseFloat(values.lon1).toFixed( 3 )}`} 
+            {`Starting coordinates: ${parseFloat(values.lat1).toFixed(
+              3
+            )}, ${parseFloat(values.lon1).toFixed(3)}`}
             <br />
-            {`Ending coordinates: ${parseFloat(values.lat2).toFixed( 3 )}, ${parseFloat(values.lon2).toFixed( 3 )}`}
-            <br /> 
-            {`Speed traveling: ${values.speed} KNOTS`} 
+            {`Ending coordinates: ${parseFloat(values.lat2).toFixed(
+              3
+            )}, ${parseFloat(values.lon2).toFixed(3)}`}
+            <br />
+            {`Speed traveling: ${values.speed} KNOTS`}
             <br />
             {`Estimated time: ${parseInt(time)} HOURS`}
             {/*TODO:display in months/days/hours instead of just hours*/}
             <br />
             {`Miles traveled: ${parseInt(dist)} NAUTICAL MILES`}
- 
           </p>
           <div style={{ alignItems: "right", justifyContent: "space-between" }}>
             <button

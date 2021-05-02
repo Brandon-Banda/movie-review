@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import "./styles.scss";
 
 const Rate = () => {
   const [rating, setRating] = useState(null);
+  let { rateValue } = useParams();
 
   useEffect(() => {
     const data = localStorage.getItem("rating-state");
-    if (data) {
+    if (rateValue) {
+      setRating(rateValue);
+    }
+    if (data && !rateValue) {
+      // if there is rating data and no URL param
       setRating(JSON.parse(data));
     }
   }, []);
