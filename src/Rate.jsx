@@ -5,16 +5,17 @@ import "./styles.scss";
 
 const Rate = () => {
   const [rating, setRating] = useState(null);
-  let { rateValue } = useParams();
+  let { rateValue } = useParams(); // should be 5 ratings for both, need to find a way to use the key of the rates
 
   useEffect(() => {
     const data = localStorage.getItem("rating-state");
     if (rateValue) {
       setRating(rateValue);
-    }
-    if (data && !rateValue) {
+      console.log(rateValue);
+    } else if (data && !rateValue) {
       // if there is rating data and no URL param
       setRating(JSON.parse(data));
+      console.log("data  " + JSON.parse(data));
     }
   }, []);
 

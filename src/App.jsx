@@ -6,7 +6,6 @@ import Activity from "./Activity";
 import * as htmlToImage from "html-to-image";
 import Navy from "./pages/Navy";
 import Images from "./images";
-
 function App() {
   var shareUrl = sessionStorage.getItem("export-url");
   return (
@@ -18,7 +17,7 @@ function App() {
             <Nav />
             <Route path='/activity' component={Activity} />
             <Route path='/' exact component={Home} />
-            <Route path='/test/:rateValue' component={Home} />
+            <Route exact path='/test/:rateValue' component={Home} />
             <Route exact path={`/share/${shareUrl}`} component={Export} />
           </div>
         </Switch>
