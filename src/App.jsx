@@ -1,11 +1,11 @@
 import "./styles.scss";
 import Rate from "./Rate";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route , useParams} from "react-router-dom";
 import Nav from "./Nav";
 import Activity from "./Activity";
 import * as htmlToImage from "html-to-image";
 import Navy from "./pages/Navy";
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 function App() {
   var shareUrl = sessionStorage.getItem("export-url");
@@ -39,6 +39,26 @@ function Export() {
 }
 
 const Movies = () => {
+  const [rating, setRating] = useState();
+
+  let { rateValue } = useParams(); // should be 5 ratings for both, need to find a way to use the key of the rates
+
+  useEffect(() => {
+    const data = localStorage.getItem("rating-state");
+    if (rateValue) {
+      setRating(rateValue);
+      console.log(rateValue);
+    } else if (data && !rateValue) {
+      // if there is rating data and no URL param
+      setRating(JSON.parse(data));
+      console.log("data  " + JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("rating-state", JSON.stringify(rating));
+  });
+
 
   const [movies, setMovies] = useState([
       {
@@ -176,7 +196,7 @@ const Movies = () => {
         )}
       </div>
       <div className='rate-container'>
-        <Rate key={idx} count={movies.length + 1} />
+        <Rate key={idx} count={movies.length + 1} rating={rating} setRating={setRating} />
       </div>
     </div>
   ));
